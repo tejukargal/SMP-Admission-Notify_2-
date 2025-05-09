@@ -1,0 +1,501 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanjay Memorial Polytechnic Admissions</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', 'Montserrat', sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.poster {
+    width: 100%;
+    max-width: 800px;
+    min-height: 900px;
+    background: linear-gradient(140deg, #ffcc00, #ff9933, #ff6699, #cc66ff);
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 20px;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.2);
+    z-index: 0;
+}
+
+.header {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 15px;
+}
+
+.college-name {
+    color: #003366;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+    line-height: 1.2;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grad-icon {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.affiliation {
+    color: #003366;
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.address {
+    color: #003366;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.divider {
+    height: 3px;
+    background-color: #003366;
+    width: 90%;
+    margin: 15px auto;
+}
+
+.main-announcement {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    padding: 15px 20px;
+    margin: 20px 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.admission-title {
+    color: #e63946;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.seats-info {
+    color: #e63946;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 8px 15px;
+    border: 2px solid #e63946;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.application-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.date-col {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 15px;
+}
+
+.date-label {
+    color: #003366;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.date-value {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.process-section {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.process-title {
+    color: #003366;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.process-list {
+    list-style-position: inside;
+    padding-left: 10px;
+    margin: 0;
+}
+
+.process-list li {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.courses-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.section-column {
+    flex: 1;
+    min-width: 250px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 0 5px 10px 5px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    color: #003366;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.course-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.course-icon {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    color: #003366;
+    width: 25px;
+    text-align: center;
+}
+
+.fee-section {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.fee-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.fee-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed #003366;
+    padding-bottom: 10px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.fee-courses {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #003366;
+}
+
+.fee-amount {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #e63946;
+}
+
+.contact-section {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.contact-button {
+    background-color: #003366;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.contact-button:hover {
+    background-color: #004c8c;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.phone-icon {
+    margin-right: 10px;
+    font-size: 1.4rem;
+}
+
+.doc-list {
+    padding-left: 0;
+    list-style-type: none;
+    margin: 0;
+}
+
+.doc-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.doc-icon {
+    margin-right: 10px;
+    color: #003366;
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+}
+
+.grad-icon {
+    margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+    .poster {
+        padding: 20px;
+    }
+    
+    .college-name {
+        font-size: 2rem;
+        flex-direction: column;
+    }
+    
+    .grad-icon {
+        margin: 5px 0;
+    }
+    
+    .admission-title {
+        font-size: 1.8rem;
+    }
+    
+    .seats-info {
+        font-size: 1.1rem;
+    }
+    
+    .section-column {
+        min-width: 100%;
+        margin: 0 0 15px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .poster {
+        padding: 15px;
+    }
+    
+    .college-name {
+        font-size: 1.7rem;
+    }
+    
+    .affiliation, .address {
+        font-size: 1rem;
+    }
+    
+    .admission-title {
+        font-size: 1.6rem;
+    }
+}
+</style>
+</head>
+<body>
+<div class="poster">
+<!-- Decorative bubbles -->
+<div class="bubble" style="width: 80px; height: 80px; top: 5%; left: 10%;"></div>
+<div class="bubble" style="width: 50px; height: 50px; top: 15%; right: 15%;"></div>
+<div class="bubble" style="width: 60px; height: 60px; bottom: 20%; left: 20%;"></div>
+<div class="bubble" style="width: 70px; height: 70px; bottom: 10%; right: 10%;"></div>
+<div class="bubble" style="width: 40px; height: 40px; top: 40%; left: 5%;"></div>
+<div class="bubble" style="width: 30px; height: 30px; top: 70%; right: 5%;"></div>
+
+<!-- Header -->
+<div class="header">
+    <h1 class="college-name">
+        <span class="grad-icon">🎓</span> SANJAY MEMORIAL POLYTECHNIC <span class="grad-icon">🎓</span>
+    </h1>
+    <p class="affiliation">Affiliated to AICTE, New Delhi</p>
+    <p class="address">Ikkeri Road, Sagar – Shivamogga District</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- Main Announcement -->
+<div class="main-announcement">
+    <h2 class="admission-title">ADMISSIONS OPEN FOR<br>DIPLOMA COURSES-2025</h2>
+    <div class="seats-info">Only 60 Seats Available in each course</div>
+</div>
+
+<!-- Application Details -->
+<div class="application-details main-announcement">
+    <div class="date-col">
+        <p class="date-label">Issue of Application (1st Phase):</p>
+        <p><span class="date-label">From:</span> <span class="date-value">5th May 2025</span></p>
+        <p><span class="date-label">To:</span> <span class="date-value">9th May 2025</span></p>
+    </div>
+    <div class="date-col">
+        <p class="date-label">Office of Sanjay Memorial</p>
+        <p class="date-value">Polytechnic, Ikkeri Road, Sagar</p>
+    </div>
+</div>
+
+<!-- Admission Process -->
+<div class="process-section">
+    <h3 class="process-title">Simple Admission Process:</h3>
+    <ol class="process-list">
+        <li>Visit the college for 1st Year Admission Application</li>
+        <li>Meet friendly and supportive staff & lecturers for course guidance</li>
+        <li>Fill and submit application with required documents</li>
+        <li>Merit List Announcement: <strong>10th May 2025</strong></li>
+        <li>Fee Payment & Admission: <strong>12th May 2025</strong></li>
+    </ol>
+</div>
+
+<!-- Fee Structure -->
+<div class="fee-section">
+    <h3 class="section-title">Approximate Fee Structure</h3>
+    <div class="fee-details">
+        <div class="fee-item">
+            <span class="fee-courses">CE, ME, EC & CS</span>
+            <span class="fee-amount">Rs. 12,000</span>
+        </div>
+        <div class="fee-item">
+            <span class="fee-courses">EE</span>
+            <span class="fee-amount">Rs. 18,500</span>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Button -->
+<div class="contact-section">
+    <a href="tel:+918095509822" class="contact-button">
+        <span class="phone-icon">📞</span> Call: 8095509822
+    </a>
+</div>
+
+<!-- Courses and Documents -->
+<div class="courses-section">
+    <div class="section-column">
+        <h3 class="section-title">Available Diploma Courses</h3>
+        <div class="course-item">
+            <span class="course-icon">🏗️</span>
+            <span class="course-name"><strong>Civil Engineering</strong></span>
+        </div>
+        <div class="course-item">
+            <span class="course-icon">⚙️</span>
+            <span class="course-name"><strong>Mechanical Engineering</strong></span>
+        </div>
+        <div class="course-item">
+            <span class="course-icon">📡</span>
+            <span class="course-name"><strong>Electronics & Communication</strong></span>
+        </div>
+        <div class="course-item">
+            <span class="course-icon">💻</span>
+            <span class="course-name"><strong>Computer Science</strong></span>
+        </div>
+        <div class="course-item">
+            <span class="course-icon">⚡</span>
+            <span class="course-name"><strong>Electrical & Electronics Engineering</strong></span>
+        </div>
+    </div>
+    
+    <div class="section-column">
+        <h3 class="section-title">Documents Required</h3>
+        <ul class="doc-list">
+            <li class="doc-item">
+                <span class="doc-icon">✓</span>
+                <span><strong>SSLC Original/Attested Marks</strong></span>
+            </li>
+            <li class="doc-item">
+                <span class="doc-icon">✓</span>
+                <span><strong>Study Certificate</strong> (1st to 10th or 5 years with BEO Signature)</span>
+            </li>
+            <li class="doc-item">
+                <span class="doc-icon">✓</span>
+                <span><strong>Character Certificate</strong></span>
+            </li>
+            <li class="doc-item">
+                <span class="doc-icon">✓</span>
+                <span><strong>Transfer Certificate</strong></span>
+            </li>
+            <li class="doc-item">
+                <span class="doc-icon">✓</span>
+                <span><strong>Caste & Income Certificate</strong></span>
+            </li>
+            <li class="doc-item">
+                <span class="doc-icon">✓</span>
+                <span><strong>Physical Fitness Certificate</strong></span>
+            </li>
+            <li class="doc-item">
+                <span class="doc-icon">✓</span>
+                <span><strong>Aadhaar Card (Copy)</strong></span>
+            </li>
+            <li class="doc-item">
+                <span class="doc-icon">✓</span>
+                <span><strong>5 Passport Size Photos</strong></span>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+</body>
+</html>
